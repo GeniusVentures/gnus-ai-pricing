@@ -80,6 +80,11 @@
             var gpu1Values = gpu1.tflops.map(function(t) { return calcEffective(t, gpu1.utilization, gpu1.price); });
             var gpu2Values = gpu2.tflops.map(function(t) { return calcEffective(t, gpu2.utilization, gpu2.price); });
 
+            var header1 = document.getElementById('header-gpu1');
+            var header2 = document.getElementById('header-gpu2');
+            if (header1) header1.textContent = gpu1Name;
+            if (header2) header2.textContent = gpu2Name;
+
             var tbody = document.getElementById('table-body');
             if (!tbody) return;
             var rows = tbody.getElementsByTagName('tr');
@@ -100,6 +105,19 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            var gpu1Select = document.getElementById('gpu1-select');
+            var gpu2Select = document.getElementById('gpu2-select');
+
+            gpu1Select.value = 'H100';
+            gpu2Select.value = 'RTX 3090';
+
+            var onchange = function() {
+                renderTable(gpu1Select.value, gpu2Select.value);
+            };
+
+            gpu1Select.addEventListener('change', onchange);
+            gpu2Select.addEventListener('change', onchange);
+
             renderTable('H100', 'RTX 3090');
         });
     </script>
@@ -125,10 +143,32 @@
     </header>
 
     <section class="border border-gray-200 rounded-lg p-4 mb-6 bg-gray-50">
-        <div class="text-sm text-gray-500 mb-2">GPU Selection</div>
-        <div class="flex flex-wrap gap-6">
-            <span class="text-lg font-semibold text-gray-700">GPU 1: H100</span>
-            <span class="text-lg font-semibold text-gray-700">GPU 2: RTX 3090</span>
+        <div class="text-sm text-gray-500 mb-3">GPU Selection</div>
+        <div class="flex flex-wrap gap-4">
+            <div>
+                <label for="gpu1-select" class="block text-sm text-gray-500 mb-1">GPU 1</label>
+                <select id="gpu1-select" class="border border-gray-300 rounded-lg bg-white px-3 py-2 text-gray-700 font-semibold">
+                    <option value="H100">H100</option>
+                    <option value="A100">A100</option>
+                    <option value="RTX 4090">RTX 4090</option>
+                    <option value="RTX 3090">RTX 3090</option>
+                    <option value="RTX 5090 (est.)">RTX 5090 (est.)</option>
+                    <option value="Blackwell B200">Blackwell B200</option>
+                    <option value="L40S">L40S</option>
+                </select>
+            </div>
+            <div>
+                <label for="gpu2-select" class="block text-sm text-gray-500 mb-1">GPU 2</label>
+                <select id="gpu2-select" class="border border-gray-300 rounded-lg bg-white px-3 py-2 text-gray-700 font-semibold">
+                    <option value="H100">H100</option>
+                    <option value="A100">A100</option>
+                    <option value="RTX 4090">RTX 4090</option>
+                    <option value="RTX 3090">RTX 3090</option>
+                    <option value="RTX 5090 (est.)">RTX 5090 (est.)</option>
+                    <option value="Blackwell B200">Blackwell B200</option>
+                    <option value="L40S">L40S</option>
+                </select>
+            </div>
         </div>
     </section>
 
@@ -142,10 +182,10 @@
                     <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
                         GNUS.ai (Decentralized)
                     </th>
-                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
+                    <th id="header-gpu1" class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
                         H100
                     </th>
-                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
+                    <th id="header-gpu2" class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
                         RTX 3090
                     </th>
                 </tr>

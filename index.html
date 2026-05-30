@@ -67,18 +67,31 @@
             return (tflops * utilization) / price;
         }
 
+        function calcCost(tflops, utilization, price) {
+            return (price / (tflops * utilization)) * 1000;
+        }
+
         function formatValue(val) {
             return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
 
-        function renderTable(gpu1Name, gpu2Name) {
+        function renderTable(gpu1Name, gpu2Name, mode) {
             var gpu1 = gpuData[gpu1Name];
             var gpu2 = gpuData[gpu2Name];
             if (!gpu1 || !gpu2) return;
 
-            var gnusValues = [gnusData.fp32, gnusData.fp16, gnusData.fp8, gnusData.adaptive, gnusData.blended];
-            var gpu1Values = gpu1.tflops.map(function(t) { return calcEffective(t, gpu1.utilization, gpu1.price); });
-            var gpu2Values = gpu2.tflops.map(function(t) { return calcEffective(t, gpu2.utilization, gpu2.price); });
+            var gnusValues, gpu1Values, gpu2Values;
+
+            if (mode === 'cost') {
+                gnusValues = [gnusData.fp32, gnusData.fp16, gnusData.fp8, gnusData.adaptive, gnusData.blended]
+                    .map(function(v) { return 1000 / v; });
+                gpu1Values = gpu1.tflops.map(function(t) { return calcCost(t, gpu1.utilization, gpu1.price); });
+                gpu2Values = gpu2.tflops.map(function(t) { return calcCost(t, gpu2.utilization, gpu2.price); });
+            } else {
+                gnusValues = [gnusData.fp32, gnusData.fp16, gnusData.fp8, gnusData.adaptive, gnusData.blended];
+                gpu1Values = gpu1.tflops.map(function(t) { return calcEffective(t, gpu1.utilization, gpu1.price); });
+                gpu2Values = gpu2.tflops.map(function(t) { return calcEffective(t, gpu2.utilization, gpu2.price); });
+            }
 
             var header1 = document.getElementById('header-gpu1');
             var header2 = document.getElementById('header-gpu2');
@@ -107,18 +120,21 @@
         document.addEventListener('DOMContentLoaded', function() {
             var gpu1Select = document.getElementById('gpu1-select');
             var gpu2Select = document.getElementById('gpu2-select');
+            var modeSelect = document.getElementById('mode-select');
 
             gpu1Select.value = 'H100';
             gpu2Select.value = 'RTX 3090';
+            modeSelect.value = 'cost';
 
             var onchange = function() {
-                renderTable(gpu1Select.value, gpu2Select.value);
+                renderTable(gpu1Select.value, gpu2Select.value, modeSelect.value);
             };
 
             gpu1Select.addEventListener('change', onchange);
             gpu2Select.addEventListener('change', onchange);
+            modeSelect.addEventListener('change', onchange);
 
-            renderTable('H100', 'RTX 3090');
+            renderTable('H100', 'RTX 3090', 'cost');
         });
     </script>
 </head>
@@ -167,6 +183,13 @@
                     <option value="RTX 5090 (est.)">RTX 5090 (est.)</option>
                     <option value="Blackwell B200">Blackwell B200</option>
                     <option value="L40S">L40S</option>
+                </select>
+            </div>
+            <div>
+                <label for="mode-select" class="block text-sm text-gray-500 mb-1">Display Mode</label>
+                <select id="mode-select" class="border border-gray-300 rounded-lg bg-white px-3 py-2 text-gray-700 font-semibold">
+                    <option value="tflops">TFLOPS per $1/hr</option>
+                    <option value="cost">Cost per 1K TFLOP/hr</option>
                 </select>
             </div>
         </div>

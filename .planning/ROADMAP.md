@@ -60,3 +60,13 @@
 | 1. Static Page Foundation | 0/0 | Not started | - |
 | 2. Data & Visual Features | 0/0 | Not started | - |
 | 3. Interactivity | 0/0 | Not started | - |
+
+### Phase 4: Add cost display toggle with TFLOP-based pricing views
+
+**Goal:** Users can switch between viewing TFLOPS per $1.00 per hour and actual dollar cost per TFLOP/hour via a display mode dropdown. Defaults to cost per 1 TFLOP/hour. Columns display dollar amounts when cost mode is active.
+**Requirements**: TBD
+**Depends on:** Phase 3
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 4 to break down)

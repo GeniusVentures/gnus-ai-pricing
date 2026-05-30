@@ -102,16 +102,18 @@
             if (!tbody) return;
             var rows = tbody.getElementsByTagName('tr');
 
+            var prefix = mode === 'cost' ? '$' : '';
+
             for (var i = 0; i < rows.length; i++) {
                 var cells = rows[i].getElementsByTagName('td');
                 if (cells.length >= 4) {
-                    cells[1].innerHTML = formatValue(gnusValues[i]);
+                    cells[1].innerHTML = prefix + formatValue(gnusValues[i]);
                     cells[1].className = 'border border-gray-300 px-4 py-2.5 text-center bg-green-50 text-green-700 font-semibold';
 
-                    cells[2].innerHTML = formatValue(gpu1Values[i]);
+                    cells[2].innerHTML = prefix + formatValue(gpu1Values[i]);
                     cells[2].className = 'border border-gray-300 px-4 py-2.5 text-center text-gray-900';
 
-                    cells[3].innerHTML = formatValue(gpu2Values[i]);
+                    cells[3].innerHTML = prefix + formatValue(gpu2Values[i]);
                     cells[3].className = 'border border-gray-300 px-4 py-2.5 text-center text-gray-900';
                 }
             }

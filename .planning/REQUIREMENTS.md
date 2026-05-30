@@ -59,27 +59,27 @@ Requirements for initial release. Each maps to roadmap phases.
 | PAGE-02 | Phase 1 | Pending |
 | PAGE-03 | Phase 1 | Pending |
 | PAGE-04 | Phase 1 | Pending |
-| CTRL-01 | Phase 1 | Pending |
-| CTRL-02 | Phase 1 | Pending |
-| CTRL-03 | Phase 1 | Pending |
+| CTRL-01 | Phase 3 | Pending |
+| CTRL-02 | Phase 3 | Pending |
+| CTRL-03 | Phase 3 | Pending |
 | TABL-01 | Phase 1 | Pending |
 | TABL-02 | Phase 1 | Pending |
-| TABL-03 | Phase 1 | Pending |
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
-| DATA-03 | Phase 1 | Pending |
-| DATA-04 | Phase 1 | Pending |
-| DATA-05 | Phase 1 | Pending |
-| FEAT-01 | Phase 1 | Pending |
-| FEAT-02 | Phase 1 | Pending |
+| TABL-03 | Phase 3 | Pending |
+| DATA-01 | Phase 2 | Pending |
+| DATA-02 | Phase 2 | Pending |
+| DATA-03 | Phase 2 | Pending |
+| DATA-04 | Phase 2 | Pending |
+| DATA-05 | Phase 2 | Pending |
+| FEAT-01 | Phase 2 | Pending |
+| FEAT-02 | Phase 2 | Pending |
 | FEAT-03 | Phase 1 | Pending |
 | FEAT-04 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 19 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 19 ⚠️
+- Mapped to phases: 19 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-05-29*
-*Last updated: 2026-05-29 after initial definition*
+*Last updated: 2026-05-29 after roadmap phase mapping*

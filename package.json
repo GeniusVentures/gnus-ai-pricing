@@ -1,5 +1,5 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "gnus-ai-pricing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Inference Compute Cost-Performance Comparison (Feb 2026)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    maxWidth: {
+                        '5xl': '64rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 min-h-screen">
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <header class="mb-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6">
+            AI Inference Compute Cost-Performance Comparison (Feb 2026)
+        </h1>
+        <div class="text-gray-600 max-w-3xl mx-auto text-center leading-relaxed text-sm sm:text-base">
+            <p class="mb-3">
+                This page provides a factual comparison of effective TFLOPS (floating-point operations per second)
+                per $1 per hour for AI inference across decentralized and traditional GPU rental options.
+            </p>
+            <p>
+                GNUS.ai uses idle consumer devices with dynamic token-based pricing,
+                while the GPU values represent typical cloud rental prices as of February 2026.
+            </p>
+        </div>
+    </header>
+
+    <section class="border border-gray-200 rounded-lg p-4 mb-6 bg-gray-50">
+        <div class="text-sm text-gray-500 mb-2">GPU Selection</div>
+        <div class="flex flex-wrap gap-6">
+            <span class="text-lg font-semibold text-gray-700">GPU 1: H100</span>
+            <span class="text-lg font-semibold text-gray-700">GPU 2: RTX 3090</span>
+        </div>
+    </section>
+
+    <div class="overflow-x-auto mb-8">
+        <table class="table-auto w-full border-collapse border border-gray-300">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
+                        Category / Precision Level
+                    </th>
+                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
+                        GNUS.ai (Decentralized)
+                    </th>
+                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
+                        H100
+                    </th>
+                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-sm">
+                        RTX 3090
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white">
+                    <td class="border border-gray-300 px-4 py-2.5 font-medium text-gray-800">
+                        FP32 Baseline
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2.5 font-medium text-gray-800">
+                        FP16 / Mixed-Precision
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="border border-gray-300 px-4 py-2.5 font-medium text-gray-800">
+                        FP8 Quantized
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2.5 font-medium text-gray-800">
+                        Adaptive Low-Bit (1.58&ndash;4 bit dynamic)
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="border border-gray-300 px-4 py-2.5 font-medium text-gray-800">
+                        Typical Blended Inference (small/mid-size models)
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                    <td class="border border-gray-300 px-4 py-2.5 text-center text-gray-600">&mdash;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <section class="mt-8 pt-6 border-t border-gray-200">
+        <h2 class="text-xl font-semibold mb-3">Assumptions &amp; Methodology</h2>
+        <p class="text-gray-500 italic">
+            Calculation methodology and assumptions will be detailed here.
+            Values are computed as Effective TFLOPS per $1/hr =
+            (Peak TFLOPS &times; Utilization) / Hourly Rental Price.
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>

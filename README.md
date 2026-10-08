@@ -23,7 +23,16 @@ Single self-contained HTML file — no build tools, no framework, no server.
 
 ## Data
 
-Hardcoded GPU specifications and pricing as of February 2026. See the methodology section in-page for calculation details.
+Hardcoded GPU specifications and prices as of February 2026. **GNUS-side effective TFLOPS-per-dollar values are illustrative inputs from the original project request, not independently observed production-network benchmarks.** They must not be interpreted as an available mainnet compute tariff, an approved API price, or demonstrated savings.
+
+The two displayed formulas are:
+
+```text
+effective_TFLOPS_per_$1_hour = peak_TFLOPS_at_precision * utilization / rental_USD_per_hour
+USD_per_1000_effective_TFLOPS_hour = 1000 / effective_TFLOPS_per_$1_hour
+```
+
+See [GNUS Pricing Methodology and Status](https://docs.gnus.ai/about-gnus.ai/features-and-benefits/pricing-methodology/) for the difference between this throughput model, historical $0.005/node-hour figures, proposed $0.0003/active external ELM-hour cognitive compute assumptions, and native per-FLOP estimators. No GCS API retail price is finalized by this table.
 
 ## License
 

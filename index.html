@@ -155,9 +155,10 @@
                 are modeled inputs, not public-network production benchmarks.
             </p>
             <p>
-                This February 2026 scenario assumes idle consumer devices for GNUS.ai
-                and selected GPU-rental prices for other systems. It is not a current
-                service quote, a node payout schedule, or a promised performance ratio.
+                This February 2026 scenario assumes idle consumer devices with
+                <strong>dynamic, token-based pricing</strong> for GNUS.ai and selected
+                GPU-rental prices for other systems. These are modeled comparison inputs,
+                not a current service quote, node payout, or promised performance ratio.
             </p>
         </div>
     </header>
@@ -295,7 +296,9 @@
             pricing. GNUS.ai's fixed 200/600/1400/3500/2200 reference values came from the
             February 2026 planning brief and <strong>are not observed network performance</strong>.
             The "TFLOPS per $1/hr" display divides modeled useful TFLOPS by assumed hourly
-            cost; the reverse view shows $1,000 divided by that ratio.
+            cost; the reverse view calculates USD per 1,000 effective TFLOPS-hours as
+            <code>1000 / (effective TFLOPS per $1/hour)</code>. The numerator is a
+            quantity of compute throughput, <strong>not $1,000 of spending</strong>.
             <a class="underline text-blue-600"
                href="https://docs.gnus.ai/about-gnus.ai/features-and-benefits/pricing-methodology/"
                target="_blank" rel="noopener noreferrer">See pricing-methodology and unit definitions</a>.

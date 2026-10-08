@@ -150,12 +150,14 @@
         </h1>
         <div class="text-gray-600 max-w-3xl mx-auto text-center leading-relaxed text-sm sm:text-base">
             <p class="mb-3">
-                This page provides a factual comparison of effective TFLOPS (floating-point operations per second)
-                per $1 per hour for AI inference across decentralized and traditional GPU rental options.
+                This page provides an <strong>illustrative, input-driven comparison</strong> of effective
+                TFLOPS (floating-point operations per second) per $1 per hour. GNUS values
+                are modeled inputs, not public-network production benchmarks.
             </p>
             <p>
-                GNUS.ai uses idle consumer devices with dynamic token-based pricing,
-                while the GPU values represent typical cloud rental prices as of February 2026.
+                This February 2026 scenario assumes idle consumer devices for GNUS.ai
+                and selected GPU-rental prices for other systems. It is not a current
+                service quote, a node payout schedule, or a promised performance ratio.
             </p>
         </div>
     </header>
@@ -265,43 +267,48 @@
 
         <h3 class="text-lg font-semibold mt-4 mb-2">Pricing Sources</h3>
         <p class="text-gray-700 leading-relaxed">
-            GPU rental prices are based on typical on-demand cloud pricing from major providers
-            as of February 2026. GNUS.ai pricing reflects the effective cost of decentralized
-            inference using idle consumer devices with dynamic token-based pricing.
+            GPU rental prices are illustrative reference inputs selected for February 2026,
+            not automatically updated quotes. GNUS.ai comparison values were supplied as
+            modeled effective-throughput inputs in the original project request;
+            no independently verified production network measurements were supplied.
         </p>
 
         <h3 class="text-lg font-semibold mt-4 mb-2">GPU Utilization</h3>
         <p class="text-gray-700 leading-relaxed">
-            All GPU calculations assume 60% sustained utilization under inference workloads.
-            This reflects typical multi-tenant cloud environments where GPUs are shared across
-            workloads. Actual utilization varies by provider and workload type.
+            All GPU calculations assume 60% utilization. This is an illustrative scenario
+            input, not measured utilization of the listed providers. Real throughput depends
+            on device, precision, workload, batching, memory limits and sustained duty cycle.
         </p>
 
         <h3 class="text-lg font-semibold mt-4 mb-2">Precision Multipliers</h3>
         <p class="text-gray-700 leading-relaxed">
-            Effective TFLOPS vary by numerical precision. FP32 represents native single-precision
-            throughput. FP16/mixed-precision typically yields approximately 2x the throughput of FP32.
-            FP8 quantization further improves throughput by approximately 4x over FP32. Adaptive
-            low-bit inference (1.58&ndash;4 bit) dynamically adjusts bit-width per layer, achieving
-            significant throughput gains depending on model architecture. Blended inference values
-            represent typical real-world performance for small to mid-size models (7B&ndash;70B
-            parameters) using a mix of precisions.
+            This model uses separate per-precision peak throughput estimates for each GPU and
+            different fixed GNUS modeling inputs. FP32, FP16, FP8 and adaptive low-bit workloads
+            are not interchangeable: kernel support, quantization, model dimensions and memory
+            pressure affect realized performance. "Blended" values are scenario assumptions,
+            not benchmarked latency or tokens/second.
         </p>
 
         <h3 class="text-lg font-semibold mt-4 mb-2">GNUS.ai Pricing Model</h3>
         <p class="text-gray-700 leading-relaxed">
-            GNUS.ai uses idle consumer GPU devices (gaming PCs, workstations) for decentralized
-            AI inference. Pricing is dynamic and token-based, meaning users pay per token processed
-            rather than per GPU-hour. The values shown represent effective TFLOPS per $1 per hour
-            based on observed network performance. This model benefits from zero idle hardware
-            cost &mdash; consumer devices that would otherwise be inactive contribute compute capacity.
+            This table models a proposed idle-device inference supply, not live public-mainnet
+            pricing. GNUS.ai's fixed 200/600/1400/3500/2200 reference values came from the
+            February 2026 planning brief and <strong>are not observed network performance</strong>.
+            The "TFLOPS per $1/hr" display divides modeled useful TFLOPS by assumed hourly
+            cost; the reverse view shows $1,000 divided by that ratio.
+            <a class="underline text-blue-600"
+               href="https://docs.gnus.ai/about-gnus.ai/features-and-benefits/pricing-methodology/"
+               target="_blank" rel="noopener noreferrer">See pricing-methodology and unit definitions</a>.
+            A proposed $0.0003 per active external ELM-hour is a separate planning assumption,
+            not a substitute for these throughput inputs or a customer-facing API tariff.
         </p>
 
         <h3 class="text-lg font-semibold mt-4 mb-2">Data Freshness</h3>
         <p class="text-gray-700 leading-relaxed">
-            Data as of February 2026. GPU rental prices fluctuate regularly; check provider websites
-            for current rates. Values marked "(est.)" are based on vendor-published specifications
-            and estimated pricing &mdash; independent benchmark data may not yet be available.
+            Source assumptions are dated February 2026. Rental prices change over time,
+            and some GPU specification inputs are estimates. No matched-workload benchmarks
+            or production-node traces were used to establish an exact GNUS-versus-GPU saving.
+            Check current vendor rates and the applicable supported precision before comparing.
         </p>
     </section>
 

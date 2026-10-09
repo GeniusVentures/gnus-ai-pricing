@@ -25,7 +25,7 @@ Single self-contained HTML file — no build tools, no framework, no server.
 
 Hardcoded GPU specifications and prices as of February 2026. **GNUS-side effective TFLOPS-per-dollar values are illustrative inputs from the original project request, not independently observed production-network benchmarks.** They must not be interpreted as an available mainnet compute tariff, an approved API price, or demonstrated savings.
 
-The two displayed formulas are:
+The **rental-GPU columns only** use the following formulas. The GNUS.ai column instead displays five fixed February 2026 scenario ratios (200, 600, 1,400, 3,500, 2,200), and cost mode simply inverts each as `1000 / supplied_GNUS_ratio`. No GNUS peak throughput, hourly rental cost, or measured network price is derived:
 
 ```text
 effective_TFLOPS_per_$1_hour = peak_TFLOPS_at_precision * utilization / rental_USD_per_hour

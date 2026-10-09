@@ -7,7 +7,7 @@ Interactive comparison of AI inference compute cost-performance between GNUS.ai 
 ## Features
 
 - **Interactive GPU selection** — Choose any two GPUs from 7 options (H100, A100, RTX 4090, RTX 3090, RTX 5090 est., Blackwell B200, L40S)
-- **Dual display modes** — TFLOPS per $1/hr and $/1K TFLOP/hr (cost view)
+- **Dual display modes** — TFLOPS per $1/hour and USD per 1,000 effective TFLOPS-hours (cost view)
 - **Live recalculation** — Table updates instantly on any selection change
 - **5 precision levels** — FP32, FP16, FP8, Adaptive Low-Bit, and Blended Inference
 - **GNUS.ai highlighted** — Visual distinction for decentralized inference comparison

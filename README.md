@@ -32,7 +32,7 @@ effective_TFLOPS_per_$1_hour = peak_TFLOPS_at_precision * utilization / rental_U
 USD_per_1000_effective_TFLOPS_hour = 1000 / effective_TFLOPS_per_$1_hour
 ```
 
-See [GNUS Pricing Methodology and Status](https://docs.gnus.ai/about-gnus.ai/features-and-benefits/pricing-methodology/) for the difference between this throughput model, historical $0.005/node-hour figures, proposed $0.0003/active external ELM-hour cognitive compute assumptions, and native per-FLOP estimators. No GCS API retail price is finalized by this table.
+See [GNUS Pricing Methodology and Status](https://docs.gnus.ai/about-gnus.ai/features-and-benefits/pricing-methodology/) for the difference between this throughput model, an **implemented GNUS-market-priced general-job escrow estimate**, historical $0.005/node-hour figures, and the **owner-set but not yet deployed $0.0003/funded-processing-hour** rate for ELM jobs. No GCS API retail price is finalized by this table.
 
 ## License
 

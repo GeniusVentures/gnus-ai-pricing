@@ -295,10 +295,16 @@
             This table models a proposed idle-device inference supply, not live public-mainnet
             pricing. GNUS.ai's fixed 200/600/1400/3500/2200 reference values came from the
             February 2026 planning brief and <strong>are not observed network performance</strong>.
-            The "TFLOPS per $1/hr" display divides modeled useful TFLOPS by assumed hourly
-            cost; the reverse view calculates USD per 1,000 effective TFLOPS-hours as
-            <code>1000 / (effective TFLOPS per $1/hour)</code>. The numerator is a
-            quantity of compute throughput, <strong>not $1,000 of spending</strong>.
+            Only the <strong>rental-GPU columns</strong> derive effective TFLOPS per
+            $1/hour from modeled peak TFLOPS, assumed utilization, and assumed
+            hourly rental price. Their cost view uses
+            <code>1000 / (GPU effective TFLOPS per $1/hour)</code>.
+            The <strong>GNUS.ai column</strong> instead uses five fixed scenario
+            ratios supplied in the February 2026 planning brief. Its cost view
+            only computes <code>1000 / supplied GNUS ratio</code>, not a GNUS
+            hourly rental price, derived peak TFLOPS, or measured network cost.
+            In both cases 1,000 represents effective TFLOPS-hours,
+            <strong>not $1,000 of spending</strong>.
             <a class="underline text-blue-600"
                href="https://docs.gnus.ai/about-gnus.ai/features-and-benefits/pricing-methodology/"
                target="_blank" rel="noopener noreferrer">See pricing-methodology and unit definitions</a>.
